@@ -5,7 +5,7 @@
 <p align="center">
   <a href="https://npmjs.com/package/eva.jsup"><img src="https://img.shields.io/npm/v/eva.jsup.svg?style=flat-square" alt="NPM version"></a>
   <a href="https://npmjs.com/package/eva.jsup"><img src="https://img.shields.io/npm/dm/eva.jsup.svg?style=flat-square" alt="NPM downloads"></a>
-  <img src="https://img.shields.io/badge/stablity-experimental-yellow.svg?style=flat-square">
+  <img src="https://img.shields.io/badge/stability-experimental-yellow.svg?style=flat-square">
 </p>
 
 ## tl;dr
