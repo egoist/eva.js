@@ -1,5 +1,5 @@
 <p align="center">
-  <br><strong>eva.js</strong> is a complete solution to <br>build modern webs using Vue.js.
+  <br><strong>eva.js</strong> is a complete solution to <br>building modern webs using Vue.js.
 </p>
 
 <p align="center">
