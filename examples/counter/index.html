@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Counter</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="../../dist/eva.js"></script>
+    <script>
+
+      const app = new EVA()
+      app.model('counter', {
+        state: {count: 0},
+        mutations: {
+          INCREMENT(state) {state.count++}
+        }
+      })
+      app.view('/', {
+        component: {
+          computed: {
+            count() {
+              return this.$store.state.counter.count
+            }
+          },
+          render(h) {
+            return h('button', {
+              on: {
+                click: () => this.$store.commit('INCREMENT')
+              }
+            }, this.count)
+          }
+        }
+      })
+      app.start({
+        render(h) {
+          return h(
+            'div',
+            {
+              attrs: {id: 'app'}
+            },
+            [
+              h('router-view')
+            ]
+          )
+        }
+      }, '#app')
+    </script>
+  </body>
+</html>

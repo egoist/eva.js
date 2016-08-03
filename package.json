@@ -1,0 +1,47 @@
+{
+  "name": "eva.js",
+  "version": "0.0.0",
+  "description": "A complete solution to build modern webs using Vue.js",
+  "main": "dist/eva.common.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo lol"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/egoist/eva.js.git"
+  },
+  "files": {
+    "dist"
+  },
+  "keywords": [
+    "eva",
+    "vue",
+    "mvc",
+    "vuex"
+  ],
+  "author": "EGOIST <0x142857@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/egoist/eva.js/issues"
+  },
+  "homepage": "https://github.com/egoist/eva.js#readme",
+  "dependencies": {
+    "vue": "^2.0.0-beta.6",
+    "vue-router": "^2.0.0-beta.4",
+    "vuex": "^2.0.0-rc.3"
+  },
+  "devDependencies": {
+    "babel-preset-es2015-rollup": "^1.1.1",
+    "babel-preset-stage-1": "^6.5.0",
+    "gulp": "^3.9.1",
+    "rollup": "^0.34.3",
+    "rollup-plugin-babel": "^2.6.1",
+    "rollup-plugin-commonjs": "^3.3.1",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-replace": "^1.1.1",
+    "rollup-plugin-uglify": "^1.0.1"
+  }
+}
