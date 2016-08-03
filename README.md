@@ -1,3 +1,32 @@
+<p align="center">
+  <br><strong>eva.js</strong> is a complete solution to <br>build modern webs using Vue.js.
+</p>
+
+<p align="center">
+  <a href="https://npmjs.com/package/eva.jsup"><img src="https://img.shields.io/npm/v/eva.jsup.svg?style=flat-square" alt="NPM version"></a>
+  <a href="https://npmjs.com/package/eva.jsup"><img src="https://img.shields.io/npm/dm/eva.jsup.svg?style=flat-square" alt="NPM downloads"></a>
+  <img src="https://img.shields.io/badge/stablity-experimental-yellow.svg?style=flat-square">
+</p>
+
+## tl;dr
+
+```js
+// model
+app.model()
+// router view
+app.view()
+// bootstrap
+app.start()
+```
+
+## Install
+
+**Note: since Vue 2.0 itself is unstable now, you should be aware of the instability of this library.**
+
+```bash
+$ npm install -S eva.js
+```
+
 ## Usage
 
 ```js

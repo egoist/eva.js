@@ -13,9 +13,9 @@
     "type": "git",
     "url": "git+https://github.com/egoist/eva.js.git"
   },
-  "files": {
+  "files": [
     "dist"
-  },
+  ],
   "keywords": [
     "eva",
     "vue",
