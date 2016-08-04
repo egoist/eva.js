@@ -6,6 +6,7 @@
   </head>
   <body>
     <div id="app"></div>
+    <script>const start = performance.now()</script>
     <script src="../../dist/eva.js"></script>
     <script>
 
@@ -46,5 +47,6 @@
         }
       }, '#app')
     </script>
+    <script>console.log(`total init time: ${performance.now() - start}ms`)</script>
   </body>
 </html>

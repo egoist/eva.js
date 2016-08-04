@@ -6,9 +6,10 @@ Vue.use(VueRouter)
 Vue.use(Vuex)
 
 class EVA {
-  constructor(initialStore = {}) {
+  constructor(options = {}) {
     this.routes = []
-    this.store = new Vuex.Store(initialStore)
+    this.options = options
+    this.store = new Vuex.Store(this.options.store)
   }
   model(name, m) {
     this.store.module(name, m)
@@ -22,8 +23,7 @@ class EVA {
   start(app, mountTo) {
     this.router = new VueRouter({
       routes: this.routes,
-      mode: 'history',
-      base: location.pathname
+      mode: this.options.mode
     })
     this.vm = new Vue({
       store: this.store,
