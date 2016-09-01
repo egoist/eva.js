@@ -1,35 +1,42 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Vuex from 'vuex'
+import assign from 'object-assign'
 
 Vue.use(VueRouter)
 Vue.use(Vuex)
 
 class EVA {
   constructor(options = {}) {
+    if (!(this instanceof EVA)) {
+      return new EVA(options)
+    }
     this.routes = []
     this.options = options
-    this.store = new Vuex.Store(this.options.store)
+    this.storeInstance = new Vuex.Store(this.options.store)
   }
   model(name, m) {
-    this.store.module(name, m)
+    this.storeInstance.registerModule(name, m)
   }
-  view(path, v) {
-    this.routes.push({
+  route(path, component, children) {
+    return {
       path,
-      ...v
-    })
+      component,
+      children
+    }
+  }
+  router(handleRoute) {
+    this.routes = handleRoute(this.route)
   }
   start(app, mountTo) {
-    this.router = new VueRouter({
+    this.routerInstance = new VueRouter({
       routes: this.routes,
       mode: this.options.mode
     })
-    this.vm = new Vue({
-      store: this.store,
-      router: this.router,
-      ...app
-    })
+    this.vm = new Vue(assign({
+      store: this.storeInstance,
+      router: this.routerInstance
+    }, app))
     this.vm.$mount(mountTo)
   }
 }

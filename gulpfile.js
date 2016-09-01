@@ -6,16 +6,13 @@ const uglify = require('rollup-plugin-uglify')
 const nodeResolve = require('rollup-plugin-node-resolve')
 const commonjs = require('rollup-plugin-commonjs')
 const replace = require('rollup-plugin-replace')
+const buble = require('rollup-plugin-buble')
 
 gulp.task('cjs', () => {
   return rollup.rollup({
     entry: './src/index.js',
     plugins: [
-      babel({
-        babelrc: false,
-        presets: ['es2015-rollup', 'stage-1'],
-        exclude: 'node_modules/**'
-      })
+      buble()
     ]
   }).then(bundle => {
     return bundle.write({
@@ -29,11 +26,7 @@ gulp.task('umd', () => {
   return rollup.rollup({
     entry: './src/index.js',
     plugins: [
-      babel({
-        babelrc: false,
-        presets: ['es2015-rollup', 'stage-1'],
-        exclude: 'node_modules/**'
-      }),
+      buble(),
       nodeResolve(),
       commonjs(),
       replace({
@@ -45,7 +38,7 @@ gulp.task('umd', () => {
     return bundle.write({
       dest: './dist/eva.js',
       format: 'umd',
-      moduleName: 'EVA'
+      moduleName: 'eva'
     })
   })
 })
@@ -54,11 +47,7 @@ gulp.task('umd:min', () => {
   return rollup.rollup({
     entry: './src/index.js',
     plugins: [
-      babel({
-        babelrc: false,
-        presets: ['es2015-rollup', 'stage-1'],
-        exclude: 'node_modules/**'
-      }),
+      buble(),
       nodeResolve(),
       commonjs(),
       uglify(),
@@ -72,7 +61,7 @@ gulp.task('umd:min', () => {
       dest: './dist/eva.min.js',
       format: 'umd',
       sourceMap: true,
-      moduleName: 'EVA'
+      moduleName: 'eva'
     })
   })
 })

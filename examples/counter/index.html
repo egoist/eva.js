@@ -10,29 +10,30 @@
     <script src="../../dist/eva.js"></script>
     <script>
 
-      const app = new EVA()
+      const app = eva()
       app.model('counter', {
         state: {count: 0},
         mutations: {
           INCREMENT(state) {state.count++}
         }
       })
-      app.view('/', {
-        component: {
-          computed: {
-            count() {
-              return this.$store.state.counter.count
-            }
-          },
-          render(h) {
-            return h('button', {
-              on: {
-                click: () => this.$store.commit('INCREMENT')
-              }
-            }, this.count)
+      const Home = {
+        computed: {
+          count() {
+            return this.$store.state.counter.count
           }
+        },
+        render(h) {
+          return h('button', {
+            on: {
+              click: () => this.$store.commit('INCREMENT')
+            }
+          }, this.count)
         }
-      })
+      }
+      app.router(route => [
+        route('/', Home)
+      ])
       app.start({
         render(h) {
           return h(

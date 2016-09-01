@@ -13,8 +13,8 @@
 ```js
 // model
 app.model()
-// router view
-app.view()
+// router
+app.router()
 // bootstrap
 app.start()
 ```
@@ -61,9 +61,10 @@ const Home = {
     )
   }
 }
-app.view('/', {
-  component: Home
-})
+
+app.router(route => [
+  route('/', Home)
+])
 
 // start app
 const App = {
