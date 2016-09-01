@@ -30,9 +30,9 @@ $ npm install -S eva.js
 ## Usage
 
 ```js
-import EVA from 'eva.js'
+import eva from 'eva.js'
 
-const app = new EVA()
+const app = eva()
 
 // a counter model
 app.model('counter', {
