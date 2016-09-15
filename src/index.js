@@ -6,8 +6,6 @@ import assign from 'object-assign'
 Vue.use(VueRouter)
 Vue.use(Vuex)
 
-const DEV = process.env.NODE_ENV === 'development'
-
 class EVA {
   constructor(options = {}) {
     if (!(this instanceof EVA)) {
@@ -51,9 +49,6 @@ class EVA {
     this.routes = handleRoute(this.route)
   }
   start(app, mountTo) {
-    if (DEV && !this.storeInstance) {
-      throw new Error('[eva] Initial store instance was not found, ensure you called app.model before starting the app!')
-    }
     this.routerInstance = new VueRouter({
       routes: this.routes,
       mode: this.options.mode
