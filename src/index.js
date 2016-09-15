@@ -62,5 +62,7 @@ class EVA {
 }
 
 EVA.mapState = Vuex.mapState
+EVA.mapActions = Vuex.mapActions
+EVA.mapGetters = Vuex.mapGetters
 
 export default EVA

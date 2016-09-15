@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Counter advanced</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>const start = performance.now()</script>
+    <script src="../../dist/eva.js"></script>
+    <script>
+      const app = eva()
+      const {mapState, mapActions} = eva
+      app.model({
+        state: {count: 0},
+        mutations: {
+          INCREMENT(state) {state.count++},
+          DECREMENT(state) {state.count--}
+        },
+        actions: {
+          incrementAsync({commit}) {
+            setTimeout(() => commit('INCREMENT'), 500)
+          }
+        }
+      })
+      const Home = {
+        name: 'home',
+        computed: mapState(['count']),
+        methods: mapActions(['incrementAsync']),
+        render(h) {
+          const buttons = [
+            h('button', {
+              on: {
+                click: () => this.$store.commit('INCREMENT')
+              }
+            }, 'Increment'),
+            h('button', {
+              on: {
+                click: () => this.$store.commit('DECREMENT')
+              }
+            }, 'Decrement'),
+            h('button', {
+              on: {
+                click: () => this.incrementAsync()
+              }
+            }, 'Increment Async')
+          ]
+          return h('div', [
+            h('h1', [this.count]),
+          ].concat(buttons))
+        }
+      }
+      app.router(route => [
+        route('/', Home)
+      ])
+      app.start({
+        render(h) {
+          return h(
+            'div',
+            {
+              attrs: {id: 'app'}
+            },
+            [
+              h('router-view')
+            ]
+          )
+        }
+      }, '#app')
+    </script>
+    <script>console.log(`total init time: ${performance.now() - start}ms`)</script>
+  </body>
+</html>
