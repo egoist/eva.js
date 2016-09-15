@@ -20,7 +20,7 @@ app.router()
 app.start()
 ```
 
-Play with the [JSBin example 😀](http://jsbin.com/laqopo/edit?js,output)
+Play with the [JSBin example](http://jsbin.com/laqopo/edit?js,output) 😀
 
 ## Features
 
@@ -131,7 +131,7 @@ As how you use Vuex^2, you can use its helpers too:
 ```js
 const {mapState, mapActions, mapGetters} = require('eva.js')
 // or ES6 modules
-import {mapState, mapActions, mapGetters} from 'eva.js
+import {mapState, mapActions, mapGetters} from 'eva.js'
 ```
 
 ### Router
