@@ -19,12 +19,15 @@ app.router()
 app.start()
 ```
 
+## Features
+
+- Battery included, Vue 2 and its friends (Vuex & Vue-Router)
+- Inspired by the [choo](https://github.com/yoshuawuyts/choo) framework which is inpired by the [elm architecture](https://guide.elm-lang.org/architecture/)
+
 ## Install
 
-**Note: since Vue 2.0 itself is unstable now, you should be aware of the instability of this library.**
-
 ```bash
-$ npm install -S eva.js
+$ npm install --save eva.js
 ```
 
 ## Usage
@@ -32,10 +35,11 @@ $ npm install -S eva.js
 ```js
 import eva from 'eva.js'
 
+// create app instance
 const app = eva()
 
 // a counter model
-app.model('counter', {
+app.model({
   state: {count: 0},
   mutations: {
     INCREMENT(state) {state.count++}
@@ -46,7 +50,7 @@ app.model('counter', {
 const Home = {
   computed: {
     count() {
-      return this.$store.state.counter.count
+      return this.$store.state.count
     }
   },
   render(h) {

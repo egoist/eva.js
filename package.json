@@ -33,9 +33,9 @@
   "homepage": "https://github.com/egoist/eva.js#readme",
   "dependencies": {
     "object-assign": "^4.1.0",
-    "vue": "^2.0.0-beta.6",
-    "vue-router": "^2.0.0-beta.4",
-    "vuex": "^2.0.0-rc.3"
+    "vue": "^2.0.0-rc.5",
+    "vue-router": "^2.0.0-rc.5",
+    "vuex": "^2.0.0-rc.5"
   },
   "devDependencies": {
     "babel-preset-es2015-rollup": "^1.1.1",
