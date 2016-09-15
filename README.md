@@ -89,6 +89,56 @@ const App = {
 app.start(App, '#app')
 ```
 
+## Concepts
+
+### Models
+
+A model contains it's initial state and the methods you use to update its state, in fact, it's a typical Vuex module too.
+
+Top-level model:
+
+```js
+// An app instance only have at most one top-level model
+app.model({
+  state: {count: 0},
+  mutations: {
+    INCREMENT(state) {state.count++}
+  }
+})
+```
+
+Namespaced model:
+
+```js
+// An app could have multiple namespaced models
+app.model('user', {
+  state: {login: false},
+  mutations: {
+    LOG_IN(state) {state.login = true}
+  }
+})
+```
+
+> In most cases using namespaces is beneficial, as having clear boundaries makes it easier to follow logic.
+
+### Router
+
+The router could render the component which matches the URL path. It has a `route` helper for creating an actual route object used in `vue-router`. routes as passed in as a nested array.
+
+```js
+app.router(route => [
+  route('/', Home),
+  route('/settings', Settings, [
+    route('/profile', SettingsProfile),
+    route('/password', SettingsPassword)
+  ])
+])
+```
+
+### View
+
+A view is a simple Vue component, that easy :)
+
 ## License
 
 MIT &copy; [EGOIST](https://github.com/egoist)
