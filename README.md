@@ -98,7 +98,7 @@ app.start(App, '#app')
 
 A model contains it's initial state and the methods you use to update its state, in fact, it's a typical Vuex module too.
 
-Top-level model:
+#### Top-level model:
 
 ```js
 // An app instance only have at most one top-level model
@@ -110,7 +110,7 @@ app.model({
 })
 ```
 
-Namespaced model:
+#### Namespaced model:
 
 ```js
 // An app could have multiple namespaced models
@@ -123,6 +123,16 @@ app.model('user', {
 ```
 
 > In most cases using namespaces is beneficial, as having clear boundaries makes it easier to follow logic.
+
+#### Helpers:
+
+As how you use Vuex^2, you can use its helpers too:
+
+```js
+const {mapState, mapActions, mapGetters} = require('eva.js')
+// or ES6 modules
+import {mapState, mapActions, mapGetters} from 'eva.js
+```
 
 ### Router
 
