@@ -8,6 +8,7 @@
   },
   "scripts": {
     "test": "echo lol",
+    "test2": "npm run build && npm test",
     "build": "gulp build",
     "umd": "gulp umd",
     "watch": "gulp"
@@ -48,5 +49,8 @@
     "rollup-plugin-node-resolve": "^2.0.0",
     "rollup-plugin-replace": "^1.1.1",
     "rollup-plugin-uglify": "^1.0.1"
+  },
+  "kanpai": {
+    "test": "test2"
   }
 }
