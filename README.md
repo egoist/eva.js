@@ -35,10 +35,10 @@ $ npm install --save eva.js
 ```js
 import eva from 'eva.js'
 
-// create app instance
+// Create app instance
 const app = eva()
 
-// a counter model
+// A counter model
 app.model({
   state: {count: 0},
   mutations: {
@@ -46,7 +46,7 @@ app.model({
   }
 })
 
-// a home route
+// A home view
 const Home = {
   computed: {
     count() {
@@ -66,11 +66,13 @@ const Home = {
   }
 }
 
+// Apply views to relevant routes
+// route(path, view, child_routes)
 app.router(route => [
   route('/', Home)
 ])
 
-// start app
+// Start app
 const App = {
   render(h) {
     return (
