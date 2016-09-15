@@ -19,6 +19,8 @@ app.router()
 app.start()
 ```
 
+Play with the [JSBin example 😀](http://jsbin.com/laqopo/edit?js,output)
+
 ## Features
 
 - Battery included, Vue 2 and its friends (Vuex & Vue-Router)
