@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Timeago</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>const start = performance.now()</script>
+    <script src="../../dist/eva.js"></script>
+    <script src="https://unpkg.com/vue-timeago@3.0.1/index.umd.js"></script>
+    <script>
+
+      const app = eva()
+      app.use(VueTimeago, {
+        locale: 'en-US',
+        locales: {
+          'en-US': [
+            "just now",
+            ["%s second ago", "%s seconds ago"],
+            ["%s minute ago", "%s minutes ago"],
+            ["%s hour ago", "%s hours ago"],
+            ["%s day ago", "%s days ago"],
+            ["%s week ago", "%s weeks ago"],
+            ["%s month ago", "%s months ago"],
+            ["%s year ago", "%s years ago"]
+          ]
+        }
+      })
+      const Home = {
+        data() {
+          return {
+            since: new Date()
+          }
+        },
+        render(h) {
+          const timeago = h('timeago', {
+            props: {
+              since: this.since,
+              autoUpdate: 1
+            }
+          })
+          return h('h1', [timeago])
+        }
+      }
+      app.router(route => [
+        route('/', Home)
+      ])
+      app.start({
+        render(h) {
+          return h(
+            'div',
+            {
+              attrs: {id: 'app'}
+            },
+            [
+              h('router-view')
+            ]
+          )
+        }
+      }, '#app')
+    </script>
+    <script>console.log(`total init time: ${performance.now() - start}ms`)</script>
+  </body>
+</html>
