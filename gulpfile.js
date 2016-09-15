@@ -12,7 +12,10 @@ gulp.task('cjs', () => {
   return rollup.rollup({
     entry: './src/index.js',
     plugins: [
-      buble()
+      buble(),
+      replace({
+        'RESOLVE_VUE': 'vue'
+      })
     ]
   }).then(bundle => {
     return bundle.write({
@@ -31,7 +34,8 @@ gulp.task('umd', () => {
       commonjs(),
       replace({
         'process.env.NODE_ENV': JSON.stringify('development'),
-        'process.env.VUE_ENV': JSON.stringify('client')
+        'process.env.VUE_ENV': JSON.stringify('client'),
+        'RESOLVE_VUE': 'vue/dist/vue'
       })
     ]
   }).then(bundle => {
@@ -53,7 +57,8 @@ gulp.task('umd:min', () => {
       uglify(),
       replace({
         'process.env.NODE_ENV': JSON.stringify('production'),
-        'process.env.VUE_ENV': JSON.stringify('client')
+        'process.env.VUE_ENV': JSON.stringify('client'),
+        'RESOLVE_VUE': 'vue/dist/vue'
       })
     ]
   }).then(bundle => {

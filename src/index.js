@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import Vue from 'RESOLVE_VUE'
 import VueRouter from 'vue-router'
 import Vuex from 'vuex'
 import assign from 'object-assign'
