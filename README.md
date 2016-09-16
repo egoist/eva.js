@@ -33,6 +33,13 @@ Play with the [JSBin example](http://jsbin.com/laqopo/edit?js,output) or the [si
 $ npm install --save eva.js
 ```
 
+In case you may want to use it directly in browser instead, view https://unpkg.com/eva.js/dist/, and add:
+
+```html
+<!-- global variable `eva` is available -->
+<script src="/path/to/eva.js"></script>
+```
+
 ## Usage
 
 ```js
