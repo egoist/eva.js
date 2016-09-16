@@ -20,7 +20,7 @@ app.router()
 app.start()
 ```
 
-Play with the [JSBin example](http://jsbin.com/laqopo/edit?js,output) 😀
+Play with the [JSBin example](http://jsbin.com/laqopo/edit?js,output) or the [simple webpack example](https://github.com/egoist/eva-webpack-simple) 😀
 
 ## Features
 
