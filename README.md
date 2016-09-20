@@ -143,7 +143,7 @@ import {mapState, mapActions, mapGetters} from 'eva.js'
 
 ### Router
 
-The router could render the component which matches the URL path. It has a `route` helper for creating an actual route object used in `vue-router`. routes as passed in as a nested array.
+The router could render the component which matches the URL path. It has a `route` helper for creating an actual route object used in `vue-router`. routes are passed in as a nested array.
 
 ```js
 app.router(route => [
