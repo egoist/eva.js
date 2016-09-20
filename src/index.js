@@ -27,16 +27,15 @@ class EVA {
       } else {
         // to register a initial model
         // `name` is the model here
+        // early return since we don't need to add namespaced model
         this.storeInstance = new Vuex.Store(name)
+        return
       }
     }
     
     // once the store intance is initialized
-    // you can add a initial model again
-    // only namespaced model is allowed
-    if (typeof name === 'string') {
-      this.storeInstance.registerModule(name, m)
-    }
+    // add namespaced model here
+    this.storeInstance.registerModule(name, m)
   }
   route(path, component, children) {
     return {
