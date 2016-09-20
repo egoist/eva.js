@@ -22,8 +22,8 @@ class EVA {
     // initial store instance
     if (!this.storeInstance) {
       if (name) {
-        // to initialize an empry store
-        // will be used for register namespaced models
+        // to initialize an empty store
+        // will be used to register namespaced models
         this.storeInstance = new Vuex.Store()
       } else {
         // to initialize a store with a top-level model
