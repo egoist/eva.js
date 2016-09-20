@@ -34,7 +34,6 @@ class EVA {
     }
     // once the store intance is initialized
     // add namespaced model here
-    delete m.name
     this.storeInstance.registerModule(name, m)
   }
   route(path, component, children) {
