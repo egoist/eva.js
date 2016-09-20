@@ -1,4 +1,4 @@
-import Vue from 'RESOLVE_VUE'
+import Vue from 'RESOLVE_VUE' // eslint-disable-line import/no-extraneous-dependencies
 import VueRouter from 'vue-router'
 import Vuex from 'vuex'
 import assign from 'object-assign'

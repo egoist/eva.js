@@ -6,6 +6,7 @@
 <p align="center">
   <a href="https://npmjs.com/package/eva.js"><img src="https://img.shields.io/npm/v/eva.js.svg?style=flat-square" alt="NPM version"></a>
   <a href="https://npmjs.com/package/eva.js"><img src="https://img.shields.io/npm/dm/eva.js.svg?style=flat-square" alt="NPM downloads"></a>
+  <a href="https://circleci.com/gh/egoist/eva.js/tree/master"><img src="https://img.shields.io/circleci/project/egoist/eva.js/master.svg?style=flat-square"></a>
   <img src="https://img.shields.io/badge/stability-beta-yellow.svg?style=flat-square">
 </p>
 

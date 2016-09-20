@@ -7,7 +7,7 @@
     "example": "examples"
   },
   "scripts": {
-    "test": "echo lol",
+    "test": "xo src/**/*.js",
     "test2": "npm run build && npm test",
     "build": "gulp build",
     "umd": "gulp umd",
@@ -48,9 +48,14 @@
     "rollup-plugin-commonjs": "^4.0.1",
     "rollup-plugin-node-resolve": "^2.0.0",
     "rollup-plugin-replace": "^1.1.1",
-    "rollup-plugin-uglify": "^1.0.1"
+    "rollup-plugin-uglify": "^1.0.1",
+    "xo": "^0.16.0"
   },
   "kanpai": {
     "test": "test2"
+  },
+  "xo": {
+    "space": 2,
+    "semicolon": false
   }
 }
