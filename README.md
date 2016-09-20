@@ -121,7 +121,8 @@ app.model({
 
 ```js
 // An app could have multiple namespaced models
-app.model('user', {
+app.model({
+  name: 'user',
   state: {login: false},
   mutations: {
     LOG_IN(state) {state.login = true}

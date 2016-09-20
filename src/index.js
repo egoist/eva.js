@@ -17,24 +17,24 @@ class EVA {
   use(...args) {
     Vue.use(...args)
   }
-  model(name, m) {
+  model(m) {
+    const name = m && m.name
     // initial store instance
     if (!this.storeInstance) {
-      if (typeof name === 'string') {
-        // to register a namespaced model
-        // therefore no initial model
+      if (name) {
+        // to initialize an empry store
+        // will be used for register namespaced models
         this.storeInstance = new Vuex.Store()
       } else {
-        // to register a initial model
-        // `name` is the model here
-        // early return since we don't need to add namespaced model
-        this.storeInstance = new Vuex.Store(name)
+        // to initialize a store with a top-level model
+        // early return since we don't need to register namespaced model
+        this.storeInstance = new Vuex.Store(m)
         return
       }
     }
-    
     // once the store intance is initialized
     // add namespaced model here
+    delete m.name
     this.storeInstance.registerModule(name, m)
   }
   route(path, component, children) {
