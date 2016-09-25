@@ -22,15 +22,15 @@ class EVA {
   model(m) {
     const name = m && m.name
     // initial store instance
-    if (!this.storeInstance) {
+    if (!this.$store) {
       if (name) {
         // to initialize an empty store
         // will be used to register namespaced models
-        this.storeInstance = new Vuex.Store()
+        this.$store = new Vuex.Store()
       } else {
         // to initialize a store with a top-level model
         // early return since we don't need to register namespaced model
-        this.storeInstance = new Vuex.Store(m)
+        this.$store = new Vuex.Store(m)
         return
       }
     }
@@ -39,7 +39,7 @@ class EVA {
     }
     // once the store intance is initialized
     // add namespaced model here
-    this.storeInstance.registerModule(name, m)
+    this.$store.registerModule(name, m)
   }
   route(path, component, children) {
     return {
@@ -52,13 +52,13 @@ class EVA {
     this.routes = handleRoute(this.route)
   }
   start(app, mountTo) {
-    this.routerInstance = new VueRouter({
+    this.$router = new VueRouter({
       routes: this.routes,
       mode: this.options.mode
     })
     this.vm = new Vue(assign({
-      store: this.storeInstance,
-      router: this.routerInstance
+      store: this.$store,
+      router: this.$router
     }, app))
     this.vm.$mount(mountTo)
   }

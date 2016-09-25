@@ -44,10 +44,10 @@ In case you may want to use it directly in browser instead, view https://unpkg.c
 ## Usage
 
 ```js
-import eva from 'eva.js'
+import EVA from 'eva.js'
 
 // Create app instance
-const app = eva()
+const app = new EVA()
 
 // A counter model
 app.model({
@@ -160,6 +160,36 @@ app.router(route => [
 ### View
 
 A view is a simple Vue component, that easy :)
+
+## API
+
+### new EVA(options: object)
+
+Create an app instance.
+
+#### options.mode
+
+The router mode, can be either `hash` *(default)* or `history`.
+
+### app.model(model: object)
+
+Register a model, a.k.a. store module in Vuex. You can omit the `name` property to make it top-level.
+
+### app.router(handler: function)
+
+Register routes.
+
+### app.start(instance: object, selector: string)
+
+Mount app to a domNode by given selector.
+
+### app.$store
+
+The vuex store instance.
+
+### app.$router
+
+The vue-router instance.
 
 ## License
 
