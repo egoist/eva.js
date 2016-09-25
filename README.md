@@ -66,7 +66,7 @@ $ npm install --save eva.js
 In case you may want to use it directly in browser instead, view https://unpkg.com/eva.js/dist/, and add:
 
 ```html
-<!-- global variable `eva` is available -->
+<!-- global variable `EVA` is available as a constructor(class) -->
 <script src="/path/to/eva.js"></script>
 ```
 

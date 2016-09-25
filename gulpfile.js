@@ -42,7 +42,7 @@ gulp.task('umd', () => {
     return bundle.write({
       dest: './dist/eva.js',
       format: 'umd',
-      moduleName: 'eva'
+      moduleName: 'EVA'
     })
   })
 })
@@ -66,7 +66,7 @@ gulp.task('umd:min', () => {
       dest: './dist/eva.min.js',
       format: 'umd',
       sourceMap: true,
-      moduleName: 'eva'
+      moduleName: 'EVA'
     })
   })
 })
