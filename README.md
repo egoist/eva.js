@@ -23,6 +23,35 @@ app.start()
 
 Play with the [JSBin example](http://jsbin.com/laqopo/edit?js,output) or the [simple webpack example](https://github.com/egoist/eva-webpack-simple) 😀
 
+<details><summary>Table of Contents</summary>
+
+<!-- toc -->
+
+- [Features](#features)
+- [Install](#install)
+- [Usage](#usage)
+- [Concepts](#concepts)
+  * [Models](#models)
+    + [Top-level model:](#top-level-model)
+    + [Namespaced model:](#namespaced-model)
+    + [Helpers:](#helpers)
+  * [Router](#router)
+  * [View](#view)
+- [API](#api)
+  * [new EVA([options: object])](#new-evaoptions-object)
+    + [options.mode](#optionsmode)
+  * [app.model(model: object)](#appmodelmodel-object)
+  * [app.router(handler: function)](#approuterhandler-function)
+  * [app.use(plugin: function, [options: object])](#appuseplugin-function-options-object)
+  * [app.start(instance: object, selector: string)](#appstartinstance-object-selector-string)
+  * [app.$store](#appstore)
+  * [app.$router](#approuter)
+- [License](#license)
+
+<!-- tocstop -->
+
+</details>
+
 ## Features
 
 - Battery included, Vue 2 and its friends (Vuex & Vue-Router)
