@@ -163,7 +163,7 @@ A view is a simple Vue component, that easy :)
 
 ## API
 
-### new EVA(options: object)
+### new EVA([options: object])
 
 Create an app instance.
 
@@ -178,6 +178,10 @@ Register a model, a.k.a. store module in Vuex. You can omit the `name` property 
 ### app.router(handler: function)
 
 Register routes.
+
+### app.use(plugin: function, [options: object])
+
+The same as `Vue.use`, you can apply any Vue plugin.
 
 ### app.start(instance: object, selector: string)
 
