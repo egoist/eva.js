@@ -6,6 +6,8 @@ import assign from 'object-assign'
 Vue.use(VueRouter)
 Vue.use(Vuex)
 
+const DEV = process.env.NODE_ENV === 'development'
+
 class EVA {
   constructor(options = {}) {
     if (!(this instanceof EVA)) {
@@ -31,6 +33,9 @@ class EVA {
         this.storeInstance = new Vuex.Store(m)
         return
       }
+    }
+    if (DEV && !name) {
+      throw new Error('[eva] Only one top-level model is allowed!')
     }
     // once the store intance is initialized
     // add namespaced model here
