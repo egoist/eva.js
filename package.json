@@ -35,13 +35,13 @@
   "homepage": "https://github.com/egoist/eva.js#readme",
   "dependencies": {
     "object-assign": "^4.1.0",
-    "vue": "^2.0.0-rc.5",
-    "vue-router": "^2.0.0-rc.5",
-    "vuex": "^2.0.0-rc.5"
+    "vue": "^2.0.1",
+    "vue-router": "^2.0.0",
+    "vuex": "^2.0.0"
   },
   "devDependencies": {
-    "babel-preset-es2015-rollup": "^1.1.1",
-    "babel-preset-stage-1": "^6.5.0",
+    "babel-preset-es2015-rollup": "^1.2.0",
+    "babel-preset-stage-1": "^6.16.0",
     "gulp": "^3.9.1",
     "markdown-toc": "^0.13.0",
     "rollup": "^0.36.1",
