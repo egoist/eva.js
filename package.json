@@ -7,7 +7,7 @@
     "example": "examples"
   },
   "scripts": {
-    "test": "xo src/**/*.js",
+    "test": "jest --env node && xo src/**/*.js",
     "test2": "npm run build && npm test",
     "build": "gulp build",
     "umd": "gulp umd",
@@ -43,6 +43,7 @@
     "babel-preset-es2015-rollup": "^1.2.0",
     "babel-preset-stage-1": "^6.16.0",
     "gulp": "^3.9.1",
+    "jest-cli": "^15.1.1",
     "markdown-toc": "^0.13.0",
     "rollup": "^0.36.1",
     "rollup-plugin-babel": "^2.6.1",
