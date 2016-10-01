@@ -7,7 +7,7 @@
     "example": "examples"
   },
   "scripts": {
-    "test": "jest --env node && xo src/**/*.js",
+    "test": "gulp cjs && jest && xo src/**/*.js",
     "test2": "npm run build && npm test",
     "build": "gulp build",
     "umd": "gulp umd",
