@@ -29,6 +29,7 @@ Play with the [JSBin example](http://jsbin.com/laqopo/edit?js,output) or the [si
 
 <!-- toc -->
 
+- [Sites using eva.js](#sites-using-evajs)
 - [Features](#features)
 - [Install](#install)
 - [Usage](#usage)
@@ -53,6 +54,12 @@ Play with the [JSBin example](http://jsbin.com/laqopo/edit?js,output) or the [si
 <!-- tocstop -->
 
 </details>
+
+## Sites using eva.js
+
+Feel free to add your project here!
+
+- [vbuild.js.org](https://vbuild.js.org/) ([source](https://github.com/egoist/vbuild.js.org))
 
 ## Features
 
