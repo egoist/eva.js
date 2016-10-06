@@ -1,4 +1,4 @@
-const EVA = require('../dist/eva.common')
+const EVA = require('../dist/eva.common').default
 
 describe('it works', () => {
   test('init', () => {
