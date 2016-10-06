@@ -195,7 +195,9 @@ app.router(route => [
 ])
 ```
 
-### View
+[The router state is effortlessly synced in vuex store.](https://github.com/vuejs/vuex-router-sync#how-does-it-work)
+
+### Views
 
 A view is a simple Vue component, that easy :)
 
