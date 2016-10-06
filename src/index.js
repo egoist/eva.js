@@ -4,6 +4,14 @@ import Vuex from 'vuex'
 import assign from 'object-assign'
 import {sync} from 'vuex-router-sync'
 
+const {
+  Store,
+  mapActions,
+  mapGetters,
+  mapMutations,
+  mapState
+} = Vuex
+
 Vue.use(VueRouter)
 Vue.use(Vuex)
 
@@ -11,9 +19,6 @@ const DEV = process.env.NODE_ENV === 'development'
 
 class EVA {
   constructor(options = {}) {
-    if (!(this instanceof EVA)) {
-      return new EVA(options)
-    }
     this.routes = []
     this.options = options
   }
@@ -27,11 +32,11 @@ class EVA {
       if (name) {
         // to initialize an empty store
         // will be used to register namespaced models
-        this.$store = new Vuex.Store()
+        this.$store = new Store()
       } else {
         // to initialize a store with a top-level model
         // early return since we don't need to register namespaced model
-        this.$store = new Vuex.Store(m)
+        this.$store = new Store(m)
         return
       }
     }
@@ -68,9 +73,11 @@ class EVA {
   }
 }
 
-EVA.mapState = Vuex.mapState
-EVA.mapActions = Vuex.mapActions
-EVA.mapMutations = Vuex.mapMutations
-EVA.mapGetters = Vuex.mapGetters
-
 export default EVA
+
+export {
+  mapActions,
+  mapGetters,
+  mapMutations,
+  mapState
+}

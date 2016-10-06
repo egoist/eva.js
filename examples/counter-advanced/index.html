@@ -9,7 +9,7 @@
     <script>const start = performance.now()</script>
     <script src="../../dist/eva.js"></script>
     <script>
-      const app = EVA()
+      const app = new EVA.default()
       const {mapState, mapActions} = EVA
       app.model({
         state: {count: 0},

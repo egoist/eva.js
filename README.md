@@ -76,6 +76,7 @@ In case you may want to use it directly in browser instead, view https://unpkg.c
 
 ```html
 <!-- global variable `EVA` is available as a constructor(class) -->
+<!-- note that, you should use new EVA.default() to create app instance in browser -->
 <script src="/path/to/eva.js"></script>
 ```
 
@@ -103,14 +104,13 @@ const Home = {
     }
   },
   render(h) {
-    return h(
-      'div',
-      [
-        h('h1', 'Home'),
-        h('button', {
-          on: {click: () => this.$store.commit('INCREMENT')}
-        }, this.count)
-      ]
+    return (
+      <div>
+        <h1>Home</h1>
+        <button on-click={() => this.$store.commit('INCREMENT')}>
+          {this.count}
+        </button>
+      </div>
     )
   }
 }
@@ -125,13 +125,9 @@ app.router(route => [
 const App = {
   render(h) {
     return (
-      h(
-        'div',
-        {attrs: {id: 'app'}},
-        [
-          h('router-view')
-        ]
-      ),
+      <div id="app">
+        <router-view></router-view>
+      </div>
     )
   }
 }
@@ -241,8 +237,10 @@ The vue-router instance.
 # build and watch source files
 $ npm run watch
 
-# launch server for example
+# launch server for simple html example
 $ http-server .
+# run webpack example
+$ vbuild examples/webpack/ -d --alias.RESOLVE_VUE vue
 
 # build for publish to npm
 # cjs and umd and compressed umd
