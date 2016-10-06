@@ -50,12 +50,12 @@ class EVA {
   }
   router(handleRoute) {
     this.routes = handleRoute(this.route)
-  }
-  start(app, mountTo) {
     this.$router = new VueRouter({
       routes: this.routes,
       mode: this.options.mode
     })
+  }
+  start(app, mountTo) {
     this.vm = new Vue(assign({
       store: this.$store,
       router: this.$router
