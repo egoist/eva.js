@@ -240,7 +240,7 @@ $ npm run watch
 # launch server for simple html example
 $ http-server .
 # run webpack example
-$ vbuild examples/webpack/ -d --alias.RESOLVE_VUE vue
+$ npm run webpack
 
 # build for publish to npm
 # cjs and umd and compressed umd

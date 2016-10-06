@@ -12,7 +12,8 @@
     "build": "gulp build",
     "umd": "gulp umd",
     "watch": "gulp",
-    "toc": "markdown-toc -i README.md"
+    "toc": "markdown-toc -i README.md",
+    "webpack": "vbuild examples/webpack/ -d --alias.RESOLVE_VUE vue"
   },
   "repository": {
     "type": "git",
