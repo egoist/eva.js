@@ -37,7 +37,8 @@
     "object-assign": "^4.1.0",
     "vue": "^2.0.1",
     "vue-router": "^2.0.0",
-    "vuex": "^2.0.0"
+    "vuex": "^2.0.0",
+    "vuex-router-sync": "^2.1.1"
   },
   "devDependencies": {
     "babel-preset-es2015-rollup": "^1.2.0",

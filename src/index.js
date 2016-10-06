@@ -2,6 +2,7 @@ import Vue from 'RESOLVE_VUE' // eslint-disable-line import/no-extraneous-depend
 import VueRouter from 'vue-router'
 import Vuex from 'vuex'
 import assign from 'object-assign'
+import {sync} from 'vuex-router-sync'
 
 Vue.use(VueRouter)
 Vue.use(Vuex)
@@ -56,6 +57,9 @@ class EVA {
     })
   }
   start(app, mountTo) {
+    if (this.$store && this.$router) {
+      sync(this.$store, this.$router)
+    }
     this.vm = new Vue(assign({
       store: this.$store,
       router: this.$router
