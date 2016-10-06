@@ -233,6 +233,20 @@ The vuex store instance.
 
 The vue-router instance.
 
+## Development
+
+```bash
+# build and watch source files
+$ npm run watch
+
+# launch server for example
+$ http-server .
+
+# build for publish to npm
+# cjs and umd and compressed umd
+$ npm run build
+```
+
 ## License
 
 MIT &copy; [EGOIST](https://github.com/egoist)
