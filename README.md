@@ -60,6 +60,7 @@ Play with the [JSBin example](http://jsbin.com/laqopo/edit?js,output) or the [si
 Feel free to add your project here!
 
 - [vbuild.js.org](https://vbuild.js.org/) ([source](https://github.com/egoist/vbuild.js.org))
+- [vue-play](http://vue-play-button.surge.sh/#/) ([source](https://github.com/egoist/vue-play))
 
 ## Features
 
