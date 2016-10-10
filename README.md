@@ -81,6 +81,8 @@ In case you may want to use it directly in browser instead, view https://unpkg.c
 <script src="/path/to/eva.js"></script>
 ```
 
+If you use the commonjs version and wanna include the runtime for vue template, follow the [official guide](http://vuejs.org/guide/installation.html#Standalone-vs-Runtime-only-Build):
+
 ## Usage
 
 ```js
