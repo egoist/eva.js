@@ -1,7 +1,6 @@
 'use strict'
 const gulp = require('gulp')
 const rollup = require('rollup')
-const babel = require('rollup-plugin-babel')
 const uglify = require('rollup-plugin-uglify')
 const nodeResolve = require('rollup-plugin-node-resolve')
 const commonjs = require('rollup-plugin-commonjs')
