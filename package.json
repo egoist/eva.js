@@ -20,8 +20,7 @@
     "url": "git+https://github.com/egoist/eva.js.git"
   },
   "files": [
-    "dist",
-    "yarn.lock"
+    "dist"
   ],
   "keywords": [
     "eva",
