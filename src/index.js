@@ -48,6 +48,11 @@ class EVA {
     this.$store.registerModule(name, m)
   }
   route(path, component, children) {
+    // pass route object directly
+    if (typeof path === 'object') {
+      return path
+    }
+    // pass (path, component, children) to make a route object
     return {
       path,
       component,
@@ -55,11 +60,18 @@ class EVA {
     }
   }
   router(handleRoute) {
-    this.routes = handleRoute(this.route)
-    this.$router = new VueRouter({
-      routes: this.routes,
+    const defaultOptions = {
       mode: this.options.mode
-    })
+    }
+    if (typeof handleRoute === 'function') {
+      // use route helper to form options
+      this.$router = new VueRouter(assign(defaultOptions, {
+        routes: handleRoute(this.route)
+      }))
+    } else {
+      // use given options directly
+      this.$router = new VueRouter(assign(defaultOptions, handleRoute))
+    }
   }
   start(app, mountTo) {
     if (this.$store && this.$router) {

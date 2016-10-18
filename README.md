@@ -192,6 +192,15 @@ app.router(route => [
     route('/password', SettingsPassword)
   ])
 ])
+
+// use an object as route argument:
+route({path: '/', component: Home, /*...*/})
+
+// use an object as router argument:
+app.router({
+  mode: 'history',
+  routes: []
+})
 ```
 
 [The router state is effortlessly synced in vuex store.](https://github.com/vuejs/vuex-router-sync#how-does-it-work)
