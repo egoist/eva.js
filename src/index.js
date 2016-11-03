@@ -91,5 +91,6 @@ export {
   mapActions,
   mapGetters,
   mapMutations,
-  mapState
+  mapState,
+  Vue
 }
