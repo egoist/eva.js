@@ -217,6 +217,31 @@ If you wan to access Vue constructor directly, simply do:
 import {Vue} from 'eva.js'
 ```
 
+## Access $store and $router outside component
+
+You can initialize your app and bootstrap it later:
+
+```js
+// ./src/app.js
+import EVA from 'eva.js'
+
+const app = new EVA()
+
+app.model() //...
+app.router() //...
+
+export default app
+
+// ./src/index.js
+import app from './app'
+app.start('#app')
+
+// ./some/other/file.js
+import app from './path/to/src/app.js'
+
+app.$router.push('/somewhere')
+```
+
 ## API
 
 ### new EVA([options: object])
