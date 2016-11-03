@@ -209,6 +209,14 @@ app.router({
 
 A view is a simple Vue component, that easy :)
 
+## Vue constructor 
+
+If you wan to access Vue constructor directly, simply do:
+
+```js
+import {Vue} from 'eva.js'
+```
+
 ## API
 
 ### new EVA([options: object])
