@@ -1,6 +1,6 @@
 {
   "name": "eva.js",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A complete solution to building modern webs with Vue.js",
   "main": "dist/eva.common.js",
   "directories": {
