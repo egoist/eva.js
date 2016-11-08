@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "gulp": "^3.9.1",
-    "jest-cli": "^16.0.1",
+    "jest-cli": "^17.0.0",
     "markdown-toc": "^0.13.0",
     "rollup": "^0.36.3",
     "rollup-plugin-buble": "^0.14.0",
