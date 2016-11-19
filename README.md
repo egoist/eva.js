@@ -262,14 +262,9 @@ Similar to the official [hackernews example](https://github.com/vuejs/vue-hacker
 ```js
 // ./src/app.js
 import EVA from 'eva.js'
+import App from './App.vue'
 
 const app = new EVA()
-
-const App = {
-  render(h) {
-    return h('router-view')
-  }
-}
 
 export default app.start(App)
 // without selector!
