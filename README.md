@@ -54,6 +54,7 @@ Play with the [JSBin example](http://jsbin.com/laqopo/edit?js,output) or the [si
   * [app.syncRouterInStore()](#appsyncrouterinstore)
   * [app.$store](#appstore)
   * [app.$router](#approuter)
+  * [app.instance](#appinstance)
 - [Development](#development)
 - [License](#license)
 
@@ -353,6 +354,10 @@ The vuex store instance.
 ### app.$router
 
 The vue-router instance.
+
+### app.instance
+
+The Vue instance created by `app.start()`, most likely you will use this in [server-side rendering](#server-side-rendering).
 
 ## Development
 
