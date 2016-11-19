@@ -19,7 +19,11 @@ const DEV = process.env.NODE_ENV === 'development'
 
 const defaultApp = {
   render(h) {
-    return h('router-view')
+    return h('div', {
+      attrs: {id: 'app'}
+    }, [
+      h('router-view')
+    ])
   }
 }
 
@@ -101,7 +105,7 @@ class EVA {
     }
     return this
   }
-  mount(selector) {
+  mount(selector = '#app') {
     if (!this.mounted) {
       this.mounted = true
       this.instance.$mount(selector)

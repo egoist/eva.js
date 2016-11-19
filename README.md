@@ -327,7 +327,7 @@ If App is not specified, we use a default value:
 ```js
 const defaultApp = {
   render(h) {
-    return h('router-view')
+    return <div id="app"><router-view></router-view></div>
   }
 }
 ```
@@ -336,7 +336,7 @@ If selector is not specified, we won't mount the app instance to dom.
 
 ### app.mount(selector)
 
-Mounted app instance to dom, must be call after `app.start([App])` (without `selector` argument).
+Mounted app instance to dom, must be call after `app.start([App])` (without `selector` argument). Default `selector` is `#app`
 
 ### app.syncRouterInStore()
 
