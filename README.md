@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./media/evajs.png" width="100" /><br>
+  <img src="./media/evajs.jpg" /><br><br>
   <br><strong>eva.js</strong> is a complete solution to <br>building modern webs with Vue.js.
 </p>
 
