@@ -17,11 +17,16 @@ Vue.use(Vuex)
 
 const DEV = process.env.NODE_ENV === 'development'
 
+const defaultApp = {
+  render(h) {
+    return h('router-view')
+  }
+}
+
 class EVA {
   constructor(options = {}) {
     this.routes = []
     this.options = options
-    this.sync = false
   }
   use(...args) {
     Vue.use(...args)
@@ -74,13 +79,33 @@ class EVA {
       this.$router = new VueRouter(assign(defaultOptions, handleRoute))
     }
   }
-  start(app, mountTo) {
-    this.syncRouterInStore()
-    this.vm = new Vue(assign({
+  createInstance(app) {
+    return new Vue(assign({
       store: this.$store,
       router: this.$router
     }, app))
-    this.vm.$mount(mountTo)
+  }
+  start(app = defaultApp, selector) {
+    // you can omit app
+    // and only specific selector
+    // or omit both
+    // then we will use defaultApp for app
+    if (typeof app === 'string') {
+      mountTo = app
+      app = defaultApp
+    }
+    this.syncRouterInStore()
+    this.instance = this.createInstance(app)
+    if (selector) {
+      this.mounted = true
+      this.mount(selector)
+    }
+    return this
+  }
+  mount(selector) {
+    if (!this.mounted) {
+      this.instance.$mount(selector)
+    }
   }
   syncRouterInStore() {
     if (!this.sync && this.$store && this.$router) {

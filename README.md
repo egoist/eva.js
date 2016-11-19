@@ -65,6 +65,7 @@ Feel free to add your project here!
 ## Features
 
 - Battery included, Vue 2 and its friends (Vuex & Vue-Router)
+- Small APIs, just Vue and the official plugins you already play well with!
 - Inspired by the [choo](https://github.com/yoshuawuyts/choo) framework which is inpired by the [elm architecture](https://guide.elm-lang.org/architecture/)
 
 ## Install
@@ -245,6 +246,50 @@ import app from './path/to/src/app.js'
 app.$router.push('/somewhere')
 ```
 
+## Server-side rendering
+
+Similar to the official [hackernews example](https://github.com/vuejs/vue-hackernews-2.0/blob/master/src/app.js):
+
+```js
+// ./src/app.js
+import EVA from 'eva.js'
+
+const app = new EVA()
+
+const App = {
+  render(h) {
+    return h('router-view')
+  }
+}
+
+export default app.start(App)
+// without selector!
+// otherwise it will be mounted to the selector
+```
+
+Then for the `server-entry.js`:
+
+```js
+// ./src/server-entry.js
+import app from './app'
+
+export default context => {
+  // you can access app.$router / app.$store
+  return Promise.all(operations)
+    .then(() => {
+      return app.instance
+    })
+}
+```
+
+For `client-entry.js`:
+
+```js
+import app from './app'
+
+app.mount('#app')
+```
+
 ## API
 
 ### new EVA([options: object])
@@ -267,9 +312,25 @@ Register routes.
 
 The same as `Vue.use`, you can apply any Vue plugin.
 
-### app.start(instance: object, selector: string)
+### app.start([App: object], [selector: string])
 
-Mount app to a domNode by given selector.
+Create app instance. Optionally mount App component to a domNode if selector is defined.
+
+If App is not specified, we use a default value:
+
+```js
+const defaultApp = {
+  render(h) {
+    return h('router-view')
+  }
+}
+```
+
+If selector is not specified, we won't mount the app instance to dom.
+
+### app.mount(selector)
+
+Mounted app instance to dom, must be call after `app.start([App])` (without `selector` argument).
 
 ### app.syncRouterInStore()
 
