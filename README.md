@@ -142,6 +142,9 @@ const App = {
   }
 }
 app.start(App, '#app')
+// equal to
+// app.start(App)
+// app.mount('#app')
 ```
 
 ## Concepts
@@ -238,13 +241,12 @@ const app = new EVA()
 
 app.model() //...
 app.router() //...
-app.syncRouterInStore()
 
-export default app
+export default app.start()
 
 // ./src/index.js
 import app from './app'
-app.start('#app')
+app.mount('#app')
 
 // ./some/other/file.js
 import app from './path/to/src/app.js'
