@@ -97,13 +97,13 @@ class EVA {
     this.syncRouterInStore()
     this.instance = this.createInstance(app)
     if (selector) {
-      this.mounted = true
       this.mount(selector)
     }
     return this
   }
   mount(selector) {
     if (!this.mounted) {
+      this.mounted = true
       this.instance.$mount(selector)
     }
   }
