@@ -215,6 +215,8 @@ If you wan to access Vue constructor directly, simply do:
 
 ```js
 import {Vue} from 'eva.js'
+
+Vue.use(yourPlugin)
 ```
 
 ## Access $store and $router outside component
@@ -229,6 +231,7 @@ const app = new EVA()
 
 app.model() //...
 app.router() //...
+app.syncRouterInStore()
 
 export default app
 
@@ -267,6 +270,12 @@ The same as `Vue.use`, you can apply any Vue plugin.
 ### app.start(instance: object, selector: string)
 
 Mount app to a domNode by given selector.
+
+### app.syncRouterInStore()
+
+keep vue-router and vuex store in sync, i.e. keep router state in vuex store.
+
+The method will be called automatically in `app.start()`, you can also call it manually before `app.start()` and `app.start()` won't call it again.
 
 ### app.$store
 

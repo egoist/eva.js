@@ -21,6 +21,7 @@ class EVA {
   constructor(options = {}) {
     this.routes = []
     this.options = options
+    this.sync = false
   }
   use(...args) {
     Vue.use(...args)
@@ -74,14 +75,18 @@ class EVA {
     }
   }
   start(app, mountTo) {
-    if (this.$store && this.$router) {
-      sync(this.$store, this.$router)
-    }
+    this.syncRouterInStore()
     this.vm = new Vue(assign({
       store: this.$store,
       router: this.$router
     }, app))
     this.vm.$mount(mountTo)
+  }
+  syncRouterInStore() {
+    if (!this.sync && this.$store && this.$router) {
+      this.sync = true
+      sync(this.$store, this.$router)
+    }
   }
 }
 
