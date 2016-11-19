@@ -73,6 +73,7 @@ Feel free to add your project here!
 
 - Battery included, Vue 2 and its friends (Vuex & Vue-Router)
 - Small APIs, just Vue and the official plugins you already play well with!
+- Support server-side rendering, of course!
 - Inspired by the [choo](https://github.com/yoshuawuyts/choo) framework which is inpired by the [elm architecture](https://guide.elm-lang.org/architecture/)
 
 ## Install
