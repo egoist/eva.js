@@ -91,7 +91,7 @@ class EVA {
     // or omit both
     // then we will use defaultApp for app
     if (typeof app === 'string') {
-      mountTo = app
+      selector = app
       app = defaultApp
     }
     this.syncRouterInStore()
