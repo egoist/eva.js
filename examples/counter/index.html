@@ -34,19 +34,7 @@
       app.router(route => [
         route('/', Home)
       ])
-      app.start({
-        render(h) {
-          return h(
-            'div',
-            {
-              attrs: {id: 'app'}
-            },
-            [
-              h('router-view')
-            ]
-          )
-        }
-      }, '#app')
+      app.start('#app')
     </script>
     <script>console.log(`total init time: ${performance.now() - start}ms`)</script>
   </body>
