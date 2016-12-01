@@ -20,7 +20,8 @@
     "url": "git+https://github.com/egoist/eva.js.git"
   },
   "files": [
-    "dist"
+    "dist",
+    "./promise-polyfill.js"
   ],
   "keywords": [
     "eva",
@@ -36,6 +37,7 @@
   "homepage": "https://github.com/egoist/eva.js#readme",
   "dependencies": {
     "object-assign": "^4.1.0",
+    "pinkie-promise": "^2.0.1",
     "vue": "^2.0.1",
     "vue-router": "^2.0.0",
     "vuex": "^2.0.0",

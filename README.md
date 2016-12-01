@@ -295,6 +295,16 @@ import app from './app'
 app.mount('#app')
 ```
 
+## Promise polyfill
+
+Some browsers do not have native Promise, like IE9+, but `vuex` requires Promise. Thus `eva.js` provides an lightweight Promise polyfill with [pinkie-promise](https://github.com/floatdrop/pinkie-promise).
+
+```js
+import 'eva.js/promise-polyfill'
+import EVA from 'eva.js'
+// ... your app code
+```
+
 ## API
 
 ### new EVA([options: object])
