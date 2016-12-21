@@ -340,7 +340,7 @@ The router mode, can be either `hash` *(default)* or `history`.
 
 ### app.model(model: object)
 
-Register a model, a.k.a. store module in Vuex. You can omit the `name` property to make it top-level.
+Register a model, a.k.a. store module in Vuex. You can omit the `name` and `namespace` property to make it top-level.
 
 ### app.router(handler: function)
 
