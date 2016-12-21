@@ -12,6 +12,7 @@
       const app = new EVA.default()
       const {mapState, mapActions} = EVA
       app.model({
+        namespace: 'counter',
         state: {count: 0},
         mutations: {
           INCREMENT(state) {state.count++},
@@ -25,18 +26,18 @@
       })
       const Home = {
         name: 'home',
-        computed: mapState(['count']),
-        methods: mapActions(['incrementAsync']),
+        computed: mapState('counter', ['count']),
+        methods: mapActions('counter', ['incrementAsync']),
         render(h) {
           const buttons = [
             h('button', {
               on: {
-                click: () => this.$store.commit('INCREMENT')
+                click: () => this.$store.commit('counter/INCREMENT')
               }
             }, 'Increment'),
             h('button', {
               on: {
-                click: () => this.$store.commit('DECREMENT')
+                click: () => this.$store.commit('counter/DECREMENT')
               }
             }, 'Decrement'),
             h('button', {

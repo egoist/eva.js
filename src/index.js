@@ -36,7 +36,7 @@ class EVA {
     Vue.use(...args)
   }
   model(m) {
-    const name = m && m.name
+    const name = m && (m.name || m.namespace)
     // initial store instance
     if (!this.$store) {
       if (name) {
@@ -55,7 +55,9 @@ class EVA {
     }
     // once the store intance is initialized
     // add namespaced model here
-    this.$store.registerModule(name, m)
+    this.$store.registerModule(name, assign({
+      namespaced: m.namespace
+    }, m))
   }
   route(path, component, children) {
     // pass route object directly

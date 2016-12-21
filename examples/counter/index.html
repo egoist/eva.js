@@ -12,6 +12,7 @@
 
       const app = new EVA.default()
       app.model({
+        name: 'counter',
         state: {count: 0},
         mutations: {
           INCREMENT(state) {state.count++}
@@ -20,7 +21,7 @@
       const Home = {
         computed: {
           count() {
-            return this.$store.state.count
+            return this.$store.state.counter.count
           }
         },
         render(h) {

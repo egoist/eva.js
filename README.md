@@ -167,10 +167,10 @@ app.model({
 })
 ```
 
-#### Namespaced model:
+#### Named/Namespaced model:
 
 ```js
-// An app could have multiple namespaced models
+// An app could have multiple named models
 app.model({
   name: 'user',
   state: {login: false},
@@ -179,6 +179,23 @@ app.model({
   }
 })
 ```
+
+By default only state are registered locally under provided name, eg `state.user.login`. But `mutations` `actions` `getters` are still in global namespace, to enforce name for those too, please change `name` to `namespace`:
+
+```js
+app.model({
+  namespace: 'user',
+  state: {login: false},
+  mutations: {
+    LOG_IN(state) {state.login = true}
+  },
+  actions: {
+    login({commit}) {
+      commit('LOG_IN') //=> user/LOG_IN
+    }
+  }
+})
+``` 
 
 > In most cases using namespaces is beneficial, as having clear boundaries makes it easier to follow logic.
 
@@ -190,6 +207,9 @@ As how you use Vuex^2, you can use its helpers too:
 const {mapState, mapActions, mapGetters} = require('eva.js')
 // or ES6 modules
 import {mapState, mapActions, mapGetters} from 'eva.js'
+
+// of course you can directly import from 'vuex' too
+import {mapState, mapActions, mapGetters} from 'vuex'
 ```
 
 ### Router
