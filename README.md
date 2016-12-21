@@ -197,6 +197,8 @@ app.model({
 })
 ``` 
 
+Check out official docs for `modules` in vuex: http://vuex.vuejs.org/en/modules.html
+
 > In most cases using namespaces is beneficial, as having clear boundaries makes it easier to follow logic.
 
 #### Helpers:
