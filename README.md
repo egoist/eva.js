@@ -247,6 +247,9 @@ If you wan to access Vue constructor directly, simply do:
 
 ```js
 import {Vue} from 'eva.js'
+// or without any change
+// import Vue from 'vue'
+// works too
 
 Vue.use(yourPlugin)
 ```
