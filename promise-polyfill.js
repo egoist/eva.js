@@ -1,1 +1,1 @@
-window.Promise = require('pinkie-promise')
+window.Promise = window.Promise || require('promise-polyfill')
